@@ -4,7 +4,7 @@
 
 namespace CoolParking.BL.Models
 {
-    class TransactionInfo
+    public class TransactionInfo
     {
 
     }

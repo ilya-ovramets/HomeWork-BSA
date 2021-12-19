@@ -6,14 +6,18 @@
 //       and tests, for example, in ParkingServiceTests you can find the necessary constructor format and validation rules.
 using CoolParking.BL.Interfaces;
 using CoolParking.BL.Models;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace CoolParking.BL
 {
-    class ParkingService : IParkingService
+    public class ParkingService : IParkingService
     {
+        List<Vehicle> VehiclColecrion = new List<Vehicle>();
+
         public void AddVehicle(Vehicle vehicle)
         {
-            throw new System.NotImplementedException();
+            VehiclColecrion.Add(vehicle);
         }
 
         public void Dispose()
@@ -41,9 +45,10 @@ namespace CoolParking.BL
             throw new System.NotImplementedException();
         }
 
-        public System.Collections.ObjectModel.ReadOnlyCollection<Vehicle> GetVehicles()
+        //Comlated
+        public ReadOnlyCollection<Vehicle> GetVehicles()
         {
-            throw new System.NotImplementedException();
+            return new ReadOnlyCollection<Vehicle>(VehiclColecrion);
         }
 
         public string ReadFromLog()
@@ -53,12 +58,26 @@ namespace CoolParking.BL
 
         public void RemoveVehicle(string vehicleId)
         {
-            throw new System.NotImplementedException();
+            for (int i = 0; i < VehiclColecrion.Count; i++)
+            {
+                if(VehiclColecrion[i].Id == vehicleId)
+                {
+                    VehiclColecrion.RemoveAt(i);
+                    break;
+                }
+            }
         }
 
         public void TopUpVehicle(string vehicleId, decimal sum)
         {
-            throw new System.NotImplementedException();
+            for (int i = 0; i < VehiclColecrion.Count; i++)
+            {
+                if (VehiclColecrion[i].Id == vehicleId)
+                {
+                    VehiclColecrion[i].Balance+= sum;
+                    break;
+                }
+            }
         }
     }
 }

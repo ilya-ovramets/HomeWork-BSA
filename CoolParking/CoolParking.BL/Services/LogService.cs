@@ -6,7 +6,7 @@ using CoolParking.BL.Interfaces;
 
 namespace CoolParking.BL
 {
-    class LogService : ILogService
+    public class LogService : ILogService
     {
         public string puch;
 

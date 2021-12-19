@@ -8,7 +8,7 @@
 
 namespace CoolParking.BL.Models
 {
-    class Vehicle
+    public class Vehicle
     {
         public readonly string Id;
         public readonly VehicleType VehicleType;

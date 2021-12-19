@@ -5,7 +5,7 @@ using System.Timers;
 
 namespace CoolParking.BL
 {
-    class TimetServices : ITimerService
+    public class TimetServices : ITimerService
     {
         public double Interval { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 

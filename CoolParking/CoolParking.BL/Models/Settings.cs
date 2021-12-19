@@ -3,7 +3,7 @@
 
 namespace CoolParking.BL.Models
 {
-    class Setting
+    public class Setting
     {
 
     }

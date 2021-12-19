@@ -3,7 +3,7 @@ using System.IO;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using CoolParking.BL.Interfaces;
-using CoolParking.BL.Services;
+using CoolParking.BL;
 using Xunit;
 
 namespace CoolParking.BL.Tests
@@ -12,6 +12,8 @@ namespace CoolParking.BL.Tests
     {
         private readonly string _logFilePath = $@"{Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)}\Transactions.log";
         private readonly ILogService _logService;
+
+        
 
         public LogServiceTests()
         {

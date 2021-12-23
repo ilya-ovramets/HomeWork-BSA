@@ -5,6 +5,8 @@
 //       The Balance should be able to change only in the CoolParking.BL project.
 //       The type of constructor is shown in the tests and the constructor should have a validation, which also is clear from the tests.
 //       Static method GenerateRandomRegistrationPlateNumber should return a randomly generated unique identifier.
+using System;
+
 
 namespace CoolParking.BL.Models
 {
@@ -19,6 +21,30 @@ namespace CoolParking.BL.Models
             this.Id = Id;
             this.VehicleType = VehicleType;
             this.Balance = Balance;
+        }
+
+        static string GenerateRandomRegistrationPlateNumber()
+        {
+            Random rand = new Random();
+            string number = "ХХ-YYYY-XX";
+            string result = "";
+            for (int i = 0; i < number.Length; i++)
+            {
+                if(number[i] == '-')
+                {
+                    result += '-';
+                    continue;
+                }               
+                if (number[i] == 'X')
+                {
+                    result += Convert.ToChar(rand.Next(65,90));
+                }
+                if (number[i] == 'Y')
+                {
+                    result += rand.Next(0,9).ToString();
+                }
+            }
+            return number;
         }
     }
 }

@@ -14,6 +14,17 @@ namespace CoolParking.BL
     public class ParkingService : IParkingService
     {
         List<Vehicle> VehiclColecrion = new List<Vehicle>();
+        TimerServices timerServicesStart;
+        TimerServices timerServicesEnd;
+        LogService logService;
+
+        public ParkingService(ITimerService timerServiceStart, ITimerService timerServiceEnd,ILogService logService) 
+        {
+            this.timerServicesStart = (TimerServices)timerServiceStart;
+            this.timerServicesEnd = (TimerServices)timerServiceEnd;
+            this.logService = (LogService)logService;
+        }
+
 
         public void AddVehicle(Vehicle vehicle)
         {

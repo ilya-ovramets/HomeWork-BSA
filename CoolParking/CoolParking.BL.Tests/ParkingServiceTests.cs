@@ -4,7 +4,6 @@ using CoolParking.BL.Interfaces;
 using CoolParking.BL.Models;
 using Xunit;
 using FakeItEasy;
-using CoolParking.BL.Services;
 
 namespace CoolParking.BL.Tests
 {
